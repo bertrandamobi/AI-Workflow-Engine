@@ -28,23 +28,54 @@ A production-style, full-stack orchestration platform for autonomous market anal
 ## Repository Structure
 
 ```text
-backend/
-  app/
-    api/           # HTTP routers
-    core/          # config + logging
-    graph/         # LangGraph workflow definitions
-    schemas/       # API contracts
-    services/      # LLM and vector abstractions
-  tests/
-frontend/
-  src/
-    app/           # Next.js pages
-    components/    # UI components
-    lib/           # API clients
-    types/         # shared types
-infra/             # reserved for IaC modules
-scripts/           # tooling scripts
-docs/              # architecture and ADRs
+AI-Workflow-Engine
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml
+├── backend/
+│   ├── Dockerfile
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── api/
+│   │   │   └── workflows.py
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   └── logging.py
+│   │   ├── graph/
+│   │   │   └── workflow.py
+│   │   ├── main.py
+│   │   ├── schemas/
+│   │   │   └── workflow.py
+│   │   └── services/
+│   │       ├── llm_service.py
+│   │       └── vector_store.py
+│   ├── pyproject.toml
+│   └── tests/
+│       └── test_health.py
+└── frontend/
+│   ├── Dockerfile
+│   ├── next.config.mjs
+│   ├── package.json
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── styles.css
+│   │   ├── components/
+│   │   │   └── WorkflowForm.tsx
+│   │   ├── lib/
+│   │   │   └── api.ts
+│   │   └── types/
+│   │       └── workflow.ts
+│   └── tsconfig.json
+├── images/
+│   └── app-image.png
+├── .env.example
+├── docker-compose.yml
+├── .gitignore
+├── .gitkeep
+├── LICENSE
+└── README.md
 ```
 
 ## Local Development
