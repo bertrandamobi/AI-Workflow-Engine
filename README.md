@@ -52,7 +52,7 @@ AI-Workflow-Engine
 │   ├── pyproject.toml
 │   └── tests/
 │       └── test_health.py
-└── frontend/
+├── frontend/
 │   ├── Dockerfile
 │   ├── next.config.mjs
 │   ├── package.json
